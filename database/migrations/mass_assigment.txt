@@ -1,0 +1,13 @@
+Announcement::create([
+    'title' => 'Judul Pengumuman Pertama',
+    'slug'  => 'judul-pengumuman-pertama',
+    'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident esse fugit rerum! Numquam, sit! Doloribus, repudiandae, iste esse temporibus, quas ullam voluptatem repellendus vero laborum in inventore incidunt magnam ad corporis neque excepturi quidem nesciunt cupiditate aut et! Eum, delectus.',
+    'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident esse fugit rerum! Numquam, sit! Doloribus, repudiandae, iste esse temporibus, quas ullam voluptatem repellendus vero laborum in inventore incidunt magnam ad corporis neque excepturi quidem nesciunt cupiditate aut et! Eum, delectus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis natus adipisci aut ea ipsam suscipit molestias sint nesciunt impedit, harum esse qui. Magni, error aperiam asperiores illo recusandae quas reiciendis, veniam sit inventore placeat nulla facere blanditiis qui veritatis. Consequatur doloribus officia veritatis accusantium, illo blanditiis architecto voluptate in, corrupti voluptatibus maxime nisi? Possimus natus autem odio explicabo ea laboriosam.',
+])
+-
+$announcement->title = 'Judul Pengumuman Ketiga'
+$announcement->slug = 'judul-pengumuman-ketiga'
+$announcement->description = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident esse fugit rerum! Numquam, sit! Doloribus, repudiandae, iste esse temporibus, quas ullam voluptatem repellendus vero laborum in inventore incidunt magnam ad corporis neque excepturi quidem nesciunt cupiditate aut et! Eum, delectus.'-
+$announcement->body = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident esse fugit rerum! Numquam, sit! Doloribus, repudiandae, iste esse temporibus, quas ullam voluptatem repellendus vero laborum in inventore incidunt magnam ad corporis neque excepturi quidem nesciunt cupiditate aut et! Eum, delectus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis natus adipisci aut ea ipsam suscipit molestias sint nesciunt impedit, harum esse qui. Magni, error aperiam asperiores illo recusandae quas reiciendis, veniam sit inventore placeat nulla facere blanditiis qui veritatis. Consequatur doloribus officia veritatis accusantium, illo blanditiis architecto voluptate in, corrupti voluptatibus maxime nisi? Possimus natus autem odio explicabo ea laboriosam.'
+$announcement->save()
+$announcement->all()
