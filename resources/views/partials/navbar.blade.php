@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-danger shadow p-3">
     <div class="container">
-      <a class="navbar-brand text-white fw-bold" href="#">PEMUDA KEREN</a>
+      <a class="navbar-brand text-white fw-bold" href="/">PEMUDA KEREN</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -15,10 +15,10 @@
           <li class="nav-item">
             <a class="nav-link  {{ ($title === 'PENGUMUMAN' ? 'active text-light fw-bold' : '') }}" href="/pengumuman">Pengumuman</a>
           </li>
-          {{-- <li class="nav-item">
+          <li class="nav-item">
             <a class="nav-link  {{ ($title === 'KONTAK' ? 'active text-light fw-bold' : '') }}" href="/kontak">Kontak</a>
-          </li> --}}
+          </li>
         </form>
       </div>
     </div>
-  </nav>  
+  </nav>

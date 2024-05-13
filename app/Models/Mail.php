@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Massage extends Model
+class Mail extends Model
 {
     use HasFactory;
 
@@ -13,6 +13,6 @@ class Massage extends Model
         'name',
         'email',
         'phone',
-        'massage',
+        'subject'
     ];
 }

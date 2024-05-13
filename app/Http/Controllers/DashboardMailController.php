@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Massage;
+use App\Models\Mail;
 use Illuminate\Http\Request;
 
-class DashboardMassageController extends Controller
+class DashboardMailController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('dashboard.massages.index', [
+        return view('dashboard.mails.index', [
             'title' => 'PESAN',
-            'massages' => Massage::all(),
+            'mails' => Mail::all()
         ]);
     }
 
@@ -37,7 +37,7 @@ class DashboardMassageController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Massage $massage)
+    public function show(Mail $mail)
     {
         //
     }
@@ -45,7 +45,7 @@ class DashboardMassageController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Massage $massage)
+    public function edit(Mail $mail)
     {
         //
     }
@@ -53,7 +53,7 @@ class DashboardMassageController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Massage $massage)
+    public function update(Request $request, Mail $mail)
     {
         //
     }
@@ -61,8 +61,9 @@ class DashboardMassageController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Massage $massage)
+    public function destroy(Mail $mail)
     {
-        
+        Mail:: destroy($mail->id);
+        return redirect ('/dashboard/mails')->with('success', 'Mail has been deleted!');
     }
 }

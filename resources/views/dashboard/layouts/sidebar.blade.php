@@ -14,7 +14,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{ request()->is('dashboard/massages*') ? 'active' : '' }}" href="/dashboard/massages">
+          <a class="nav-link {{ request()->is('dashboard/mails*') ? 'active' : '' }}" href="/dashboard/mails">
             <span data-feather="message-circle"></span>
             PESAN
           </a>

@@ -41,7 +41,7 @@ class DashboardPostController extends Controller
             'slug' => 'required|unique:posts',
             'description' => 'required|max:255',
             'image' => 'required|image|file|max:2048',
-            'body' => 'required',  
+            'body' => 'required',
         ]);
 
         if($request->file('image')){
@@ -56,7 +56,7 @@ class DashboardPostController extends Controller
         }
 
         Post::create($validatedData);
-    
+
         // Redirect with success message
         return redirect('/dashboard/posts')->with('success', 'New Post has been added!');
     }
@@ -77,7 +77,7 @@ class DashboardPostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+
     }
 
     /**
