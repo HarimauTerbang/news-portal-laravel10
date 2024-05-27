@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -12,9 +13,6 @@
     <title>PEMUDA KEREN | {{ $title }}</title>
   </head>
   <body style="background-color: #800000;">
-
-    {{-- BOOTSTRAP NAVBAR --}}
-    @include('partials.navbar')
 
     <div class="container bg-light">
 

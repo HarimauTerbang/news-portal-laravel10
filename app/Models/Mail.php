@@ -13,6 +13,6 @@ class Mail extends Model
         'name',
         'email',
         'phone',
-        'subject'
+        'subject',
     ];
 }

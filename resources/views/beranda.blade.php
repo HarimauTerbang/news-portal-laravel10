@@ -2,4 +2,5 @@
 
 @section('container')
     @include('partials.carousel')
+    @include('partials.footer')
 @endsection

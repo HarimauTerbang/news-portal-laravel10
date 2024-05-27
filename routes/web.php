@@ -2,11 +2,16 @@
 // KONKSI MODEL DENGAN ROUTE
 use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\PostController;
+
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DashboardPostController;
 use App\Http\Controllers\DashboardAnnouncementController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\DashboardMailController;
+use App\Http\Controllers\LoginController;
+
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 
 Route::get('/', function () {
@@ -37,21 +42,25 @@ Route::get('/kontak', [MailController::class,'index']);
 Route::post('/kontak', [MailController::class, 'store'])->name('mails.store');
 
 // DASHBOARD ADMIN
-Route::get('/dashboard', function () {
-    return view('dashboard.index',[
-        'title' => 'ADMIN'
-    ]);
+Route::prefix('/dashboard')-> middleware('auth')-> group(function () {
+    Route::get('/', [DashboardController::class,'index']);
+
+    Route::resource('/posts', DashboardPostController::class,);
+    Route::post('/posts', [DashboardPostController::class, 'store'])->name('dashboard.posts.store');
+
+    Route::resource('/announcements', DashboardAnnouncementController::class,);
+    Route::post('/announcements', [DashboardAnnouncementController::class, 'store'])->name('dashboard.announcements.store');
+
+    Route::resource('/mails', DashboardMailController::class);
+    route::get('/mails', [DashboardMailController::class, 'index'])->name('dashboard.mails.index');
+    route::post('/mails', [DashboardMailController::class, 'destroy'])->name('dashboard.mails.destroy');
 });
 
-Route::resource('/dashboard/posts', DashboardPostController::class,);
-Route::post('/dashboard/posts', [DashboardPostController::class, 'store'])->name('dashboard.posts.store');
+// LOGIN ADMIN
+Route::prefix('login')->middleware('guest')->group(function () {
+    Route::get('/', [LoginController::class, 'index'])->name('login.index');
+    Route::post('/', [LoginController::class, 'authenticate'])->name('login.authenticate');
+});
 
-Route::resource('/dashboard/announcements', DashboardAnnouncementController::class,);
-Route::post('/dashboard/announcements', [DashboardAnnouncementController::class, 'store'])->name('dashboard.announcements.store');
-
-Route::resource('/dashboard/mails', DashboardMailController::class);
-route::get('/dashboard/mails', [DashboardMailController::class, 'index'])->name('dashboard.mails.index');
-route::post('/dashboard/mails', [DashboardMailController::class, 'destroy'])->name('dashboard.mails.destroy');
-
-
+Route::post('logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');
 
