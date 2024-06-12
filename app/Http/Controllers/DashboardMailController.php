@@ -12,9 +12,10 @@ class DashboardMailController extends Controller
      */
     public function index()
     {
+        $mail = Mail::latest()->paginate(1);
         return view('dashboard.mails.index', [
             'title' => 'PESAN',
-            'mails' => Mail::all()
+            'mails' => $mail,
         ]);
     }
 

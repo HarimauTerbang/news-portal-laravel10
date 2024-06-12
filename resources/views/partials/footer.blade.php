@@ -15,13 +15,13 @@
     }
 </style>
 
-<footer class="bg-danger text-white">
+<footer class="rounded text-white shadow" style="backgorund-color: transparent; backdrop-filter: blur(20px);">
     <div class="container">
         <div class="row">
             <!-- Kolom pertama -->
-            <div class="col-md-4 p-5 bg-white text-dark">
+            <div class="col-md-4 p-5 text-dark ">
                 <img class="mb-4 bg-white" src="img/dispora.png" alt="Logo" height="100">
-                <p>Website Resmi Milik Dinas Kepemudaan dan Olahraga Kota Blitar</p>
+                <p class="text-white">Website Resmi Milik Dinas Kepemudaan dan Olahraga Kota Blitar</p>
             </div>
             <!-- Kolom kedua -->
             <div class="col-md-4 p-5">
@@ -37,6 +37,8 @@
             <div class="col-md-4 p-5">
                 <h5 class="pb-3">Email</h5>
                 <p>Email: dispora@blitarkota.go.id</p>
+                <a href="{{ url('/login') }}" style="text-decoration: none; color: #ffffff" class="badge bg-primary p-2 px-3">
+                Login as admin</a>
             </div>
         </div>
     </div>

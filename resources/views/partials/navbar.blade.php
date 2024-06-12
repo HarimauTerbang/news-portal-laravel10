@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-danger shadow p-3">
+<nav class="navbar navbar-expand-lg navbar-light bg-neutral shadow-sm p-5 p-sm-3" style="backgorund-color: transparent; backdrop-filter: blur(20px);">
     <div class="container">
       <a class="navbar-brand text-white fw-bold" href="/">PEMUDA KEREN</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,9 +19,6 @@
             <a class="nav-link  {{ ($title === 'KONTAK' ? 'active text-light fw-bold' : '') }}" href="/kontak">Kontak</a>
           </li>
         </ul>
-      </div>
-      <div class="d-flex justify-content-end">
-        <a href="{{ url('/login') }}" class="btn btn-light">Login</a>
       </div>
     </div>
   </nav>

@@ -1,4 +1,4 @@
-<section class="vh-100">
+<section class="vh-100" >
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col col-xl-10">
@@ -8,7 +8,7 @@
                 <img src="{{ $logo }}"
                   alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
               </div>
-              <div class="col-md-6 col-lg-7 d-flex align-items-center">
+              <div class="col-md-6 col-lg-7 d-flex align-items-center ">
                 <div class="card-body p-4 p-lg-5 text-black">
 
                     <form method="post" action="/login">

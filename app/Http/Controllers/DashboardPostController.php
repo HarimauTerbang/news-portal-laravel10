@@ -12,9 +12,11 @@ class DashboardPostController extends Controller
      */
     public function index()
     {
+        $post = Post::latest()->paginate(12);
+
         return view('dashboard.posts.index', [
             'title' => 'BERITA',
-            'posts' => Post::all()
+            'posts' => $post,
         ]);
     }
 

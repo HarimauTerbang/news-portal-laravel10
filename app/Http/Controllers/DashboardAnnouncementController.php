@@ -13,9 +13,11 @@ class DashboardAnnouncementController extends Controller
      */
     public function index()
     {
+        $announcement = Announcement::latest()->paginate(12);
+
         return view('dashboard.announcements.index', [
             'title' => 'PENGUMUMAN',
-            'announcements' => Announcement::all()
+            'announcements' => $announcement,
         ]);
     }
 
@@ -38,7 +40,7 @@ class DashboardAnnouncementController extends Controller
             'title' => 'required|max:100',
             'slug' => 'required|unique:announcements',
             'description' => 'required|max:255',
-            'body' => 'required',  
+            'body' => 'required',
         ]);
 
         if($request->slug == null){

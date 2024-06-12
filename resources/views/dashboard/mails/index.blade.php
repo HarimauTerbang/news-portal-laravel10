@@ -46,5 +46,8 @@
             @endforeach
           </tbody>
         </table>
+        <div class="d-flex justify-content-end">
+            {{ $mails->links() }}
+        </div>
       </div>
 @endsection
