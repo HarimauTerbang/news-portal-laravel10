@@ -18,7 +18,10 @@
           <li class="nav-item">
             <a class="nav-link  {{ ($title === 'KONTAK' ? 'active text-light fw-bold' : '') }}" href="/kontak">Kontak</a>
           </li>
-        </form>
+        </ul>
+      </div>
+      <div class="d-flex justify-content-end">
+        <a href="{{ url('/login') }}" class="btn btn-light">Login</a>
       </div>
     </div>
   </nav>

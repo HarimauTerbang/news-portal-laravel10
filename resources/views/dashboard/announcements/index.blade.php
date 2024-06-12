@@ -12,7 +12,7 @@
     @endif
 
       <a href="/dashboard/announcements/create" class="btn btn-primary mb-3"><span data-feather="plus"></span> Tambah Postingan</a>
-    
+
     <div class="table-responsive col-lg-8">
         <table class="table table-striped table-sm">
           <thead>

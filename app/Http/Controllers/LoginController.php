@@ -10,6 +10,10 @@ class LoginController extends Controller
 {
     public function index()
     {
+        if (Auth::check()) {
+            // Redirect to the dashboard if the user is authenticated
+            return redirect('/dashboard');
+        }
         return view('Login', [
             'logo'=>'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeElJVSnJKRMzlEH4PI7cehTujTVB2jmSHd9F3eELngQ&s',
             'title' => 'LOGIN ADMIN',

@@ -17,11 +17,13 @@ class PostController extends Controller
             //cari berdasarkan isi body
             ->orWhere('body', 'like', '%' . request('search') . '%');
         }
-        
+
         return view('posts', [
             'title' => 'BERITA',
             'posts' => $posts->paginate(6),
         ]);
+
+        
     }
 
     public function show(Post $post)

@@ -34,9 +34,11 @@
 
   </head>
   <body>
-    
+
+    @include('dashboard.layouts.header')
+
     {{-- AUTHENTIFICATION  --}}
-    @if (session()->has('success'))
+    {{-- @if (session()->has('success'))
         <div class="alert alert-success col-lg-8" role="alert">
             {{ session('success') }}
             <button type="close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -46,9 +48,9 @@
         <div class="alert alert-danger col-lg-8" role="alert">
             {{ session('error') }}
             <button type="close" data-bs-dismiss="alert" aria-label="Close"></button>
-    @endif
+    @endif --}}
 
-    @include('dashboard.layouts.header')
+
 
     <div class="container-fluid">
     <div class="row">
