@@ -14,7 +14,7 @@ class LoginController extends Controller
             // Redirect to the dashboard if the user is authenticated
             return redirect('/dashboard');
         }
-        return view('Login', [
+        return view('login', [
             'logo'=>'img/logo_black.png',
             'title' => 'LOGIN ADMIN',
         ]);
