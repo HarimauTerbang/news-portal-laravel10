@@ -35,8 +35,6 @@ class DashboardPostController extends Controller
      */
     public function store(Request $request)
     {
-        // return $request->file('image')->store('post-images');
-
         // Validate the request data
         $validatedData = $request->validate([
             'title' => 'required|max:100',
@@ -46,15 +44,20 @@ class DashboardPostController extends Controller
             'body' => 'required',
         ]);
 
-        if($request->file('image')){
-            $validatedData['image'] = $request->file('image')->store('public/post-images');
-        }
-        elseif($request->file('image') == null){
-            return redirect()->back()->withErrors(['slug' => 'Gambar wajib diisi!']);
+        if ($request->file('image')) {
+            // Store the image and get the path
+            $path = $request->file('image')->store('public/post-images');
+
+            // Remove the 'public/' prefix from the path
+            $path = str_replace('public/', '', $path);
+
+            $validatedData['image'] = $path;
+        } else {
+            return redirect()->back()->withErrors(['image' => 'Gambar wajib diisi!']);
         }
 
-        if($request->slug == null){
-            return redirect()->back()->withErrors(['image' => 'Slug tidak boleh kosong, ketik ulang judul untuk mengisi slug']);
+        if ($request->slug == null) {
+            return redirect()->back()->withErrors(['slug' => 'Slug tidak boleh kosong, ketik ulang judul untuk mengisi slug']);
         }
 
         Post::create($validatedData);
@@ -62,6 +65,7 @@ class DashboardPostController extends Controller
         // Redirect with success message
         return redirect('/dashboard/posts')->with('success', 'New Post has been added!');
     }
+
 
     /**
      * Display the specified resource.
