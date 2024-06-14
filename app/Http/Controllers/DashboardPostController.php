@@ -34,47 +34,34 @@ class DashboardPostController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-{
-    // Validate the request data
-    $validatedData = $request->validate([
-        'title' => 'required|max:100',
-        'slug' => 'required|unique:posts',
-        'description' => 'required|max:255',
-        'image' => 'required|file|image|mimes:jpeg,png,jpg|max:2048',
-        'body' => 'required',
-    ]);
+    {
+        // return $request->file('image')->store('post-images');
 
-    // Check if an image file is uploaded
-    if ($request->hasFile('image')) {
-        $file = $request->file('image');
+        // Validate the request data
+        $validatedData = $request->validate([
+            'title' => 'required|max:100',
+            'slug' => 'required|unique:posts',
+            'description' => 'required|max:255',
+            'image' => 'required|image|file|max:2048',
+            'body' => 'required',
+        ]);
 
-        // Generate a unique name for the file
-        $nama_file = time() . "_" . $file->getClientOriginalName();
+        if($request->file('image')){
+            $validatedData['image'] = $request->file('image')->store('public/post-images');
+        }
+        elseif($request->file('image') == null){
+            return redirect()->back()->withErrors(['slug' => 'Gambar wajib diisi!']);
+        }
 
-        // Define the upload path
-        $tujuan_upload = 'public/post-images';
+        if($request->slug == null){
+            return redirect()->back()->withErrors(['image' => 'Slug tidak boleh kosong, ketik ulang judul untuk mengisi slug']);
+        }
 
-        // Move the uploaded file to the destination path
-        $file->move($tujuan_upload, $nama_file);
+        Post::create($validatedData);
 
-        // Save the file name in the validated data array
-        $validatedData['image'] = $nama_file;
-    } else {
-        return redirect()->back()->withErrors(['image' => 'Gambar wajib diisi!']);
+        // Redirect with success message
+        return redirect('/dashboard/posts')->with('success', 'New Post has been added!');
     }
-
-    // Check if the slug is provided
-    if ($request->input('slug') == null) {
-        return redirect()->back()->withErrors(['slug' => 'Slug tidak boleh kosong, ketik ulang judul untuk mengisi slug']);
-    }
-
-    // Create a new post with the validated data
-    Post::create($validatedData);
-
-    // Redirect with success message
-    return redirect('/dashboard/posts')->with('success', 'New Post has been added!');
-}
-
 
     /**
      * Display the specified resource.
