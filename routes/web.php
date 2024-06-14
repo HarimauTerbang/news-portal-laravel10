@@ -18,9 +18,9 @@ Route::get('/', function () {
     return view('beranda',[
         'title' => 'BERANDA',
 
-        'banner001'=>'https://i.ytimg.com/vi/WdkoERcUNEY/maxresdefault.jpg',
-        'banner002'=>'https://i.ytimg.com/vi/WdkoERcUNEY/maxresdefault.jpg',
-        'banner003'=>'https://i.ytimg.com/vi/WdkoERcUNEY/maxresdefault.jpg',
+        'banner001' =>'img/banner001.png',
+        'banner002'=>'img/banner002.png',
+        'banner003'=>'img/banner001.png',
 
     ]);
 });
