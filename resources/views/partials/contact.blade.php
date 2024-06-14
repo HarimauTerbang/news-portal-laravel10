@@ -5,7 +5,7 @@
 @endif
 
 <div class="container pt-4 pb-4">
-    <div class="container p-5 rounded shadow" style="backgorund-color: transparent; backdrop-filter: blur(30px);">
+    <div class="container p-5 rounded shadow" style="background-color: transparent; backdrop-filter: blur(30px);">
         <h1 class="text-white fw-bold">Hubungi Kami</h1>
         <p class="text-white">Isi formulir dibawah ini jika anda memiliki pertanyaan.</p>
 
@@ -35,6 +35,3 @@
         </form>
     </div>
 </div>
-
-
-

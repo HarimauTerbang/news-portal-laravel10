@@ -19,9 +19,10 @@
     <div class="container">
         <div class="row">
             <!-- Kolom pertama -->
-            <div class="col-md-4 p-5 text-dark ">
-                <img class="mb-4 bg-white" src="img/dispora.png" alt="Logo" height="100">
-                <p class="text-white">Website Resmi Milik Dinas Kepemudaan dan Olahraga Kota Blitar</p>
+            <div class=" col-md-4 p-5 text-dark ">
+                <img class="mb-4" src="img/logo_white.png" alt="Logo" height="100">
+                <h5 class="fw-bold text-white">PEMUDA KEREN</h5>
+                <p class="text-white">Blog Berita dan Informasi Kekinian</p>
             </div>
             <!-- Kolom kedua -->
             <div class="col-md-4 p-5">
@@ -35,8 +36,8 @@
             </div>
             <!-- Kolom ketiga -->
             <div class="col-md-4 p-5">
-                <h5 class="pb-3">Email</h5>
-                <p>Email: dispora@blitarkota.go.id</p>
+                <h5 class="pb-3">Email Admin</h5>
+                <p>Email: farrelagiarahmana@gmail.com</p>
                 <a href="{{ url('/login') }}" style="text-decoration: none; color: #ffffff" class="badge bg-primary p-2 px-3">
                 Login as admin</a>
             </div>

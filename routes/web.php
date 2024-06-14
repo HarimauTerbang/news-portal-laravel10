@@ -19,8 +19,6 @@ Route::get('/', function () {
         'title' => 'BERANDA',
 
         'banner001'=>'https://i.ytimg.com/vi/WdkoERcUNEY/maxresdefault.jpg',
-        'banner002'=>'https://i.ytimg.com/vi/pWr-0L1BNq8/maxresdefault.jpg',
-        'banner003'=>'https://i.ytimg.com/vi/WdkoERcUNEY/maxresdefault.jpg',
 
     ]);
 });

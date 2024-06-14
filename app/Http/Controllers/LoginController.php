@@ -15,7 +15,7 @@ class LoginController extends Controller
             return redirect('/dashboard');
         }
         return view('Login', [
-            'logo'=>'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeElJVSnJKRMzlEH4PI7cehTujTVB2jmSHd9F3eELngQ&s',
+            'logo'=>'img/logo_black.png',
             'title' => 'LOGIN ADMIN',
         ]);
     }
